@@ -174,7 +174,7 @@ class Contact {
 
       }
     }
-
+    //delete Contact function
     function deleteContact(findName) {
       for(let person of contactList){
         if(findName === person.firstName){
@@ -188,7 +188,7 @@ class Contact {
      //find and Edit Contact
     let findName="Naveen";
     editContact(findName);
-    
+    //delete Contact
     let deleteName="Bhagi";
     deleteContact(deleteName);
 
@@ -198,4 +198,8 @@ class Contact {
       for(let person of contactList){
         console.log(person);
       }
+// number of contacts
+let numberOfContacts=contactList.length;
+console.log("number: "+numberOfContacts);
+
   
