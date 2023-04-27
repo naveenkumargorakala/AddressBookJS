@@ -1,3 +1,4 @@
+
 class Contact {
   firstName
   lastName
@@ -47,7 +48,7 @@ class Contact {
       if(firstNameRegex.test(firstName))
       this.firstName = firstName;
       else
-      throw "First Name is Incorrect Format";
+      throw "First Name is Incorrect!!!!!!!!";
       
    }
    set lastName(lastName){
@@ -55,59 +56,72 @@ class Contact {
       if(lastNameRegex.test(lastName))
       this.lastName = lastName;
       else
-      throw "Last Name is Incorrect Format";
+      throw "Last Name is Incorrect!!!!!!!!";
    }
    set address(address){
       let addressRegex = RegExp('^[a-zA-Z0-9#,]{4,}$');
       if(addressRegex.test(address))
       this.address = address;
       else
-      throw "Address is Incorrect Format";
+      throw "Address is Incorrect!!!!!!!!";
    }
     set city(city){
       let cityRegex = RegExp('^[a-zA-Z]{3,}$');
       if(cityRegex.test(city))
       this.city = city;
       else
-      throw "City is Incorrect Format";
+      throw "City is Incorrect!!!!!!!!";
    }
    set state(state){
       let stateRegex = RegExp('^[a-zA-Z]{3,}$');
       if(stateRegex.test(state))
       this.state = state;
       else
-      throw "State is Incorrect FOrmat";
+      throw "State is Incorrect!!!!!!!!";
    }
    set zip(zip){
       let zipRegex = RegExp('^[0-9]{3}\\s{0,1}[0-9]{3}$');
       if(zipRegex.test(zip))
       this.zip = zip;
       else
-      throw "Zip Code is Incorrect Format";
+      throw "Zip Code is Incorrect!!!!!!!!";
    }
    set phone(phone){
       let phoneRegex = RegExp('^[0-9]{2}\\s{1}[0-9]{10}$');
       if(phoneRegex.test(phone))
       this.phone = phone;
       else
-      throw "Phone is Incorrect Format";
+      throw "Phone is Incorrect!!!!!!!!";
    }
    set email(email){
       let emailRegex = RegExp('^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$');
       if(emailRegex.test(email))
       this.email = email;
       else
-      throw "Email is Incorrect Format";
+      throw "Email is Incorrect!!!!!!!!";
    }
    toString(){
       return "First Name : "+ this.firstName + ", Last Name : "+ this.lastName + ", Address : " + this.address + ", City : "+ this.city + ", State : "+ this.state +", Zip : "+ this.zip+ ", Phone Number : "+ this.phone + ", Email : "+ this.email;
   }
 }
+  let contactList = new Array();
+
 
   try {
-  let contact = new Contact("Naveen", "Kumar", "Haripuram", "Mandasa", "Andhra", "413005", "7854589658", "naveen@gmail.com" )
-   console.log(contact.toString());
+    contactList.push(new Contact("Naveen", "Kumar", "Bobbili", "Salur", "Andhra", "543005", "758456906", "Naveen@gmail.com" ));
+   
   }
   catch(e){
       console.log(e)
   }
+
+  try {
+    contactList.push(new Contact("Bhagi", "Raj", "RKpuram", "Palasa", "Andhra", "546006", "89987988143", "Bhagi@raj.com" ));
+       
+      }
+      catch(e){
+          console.log(e)
+      }
+      for(let person of contactList){
+      console.log(person);
+    }
