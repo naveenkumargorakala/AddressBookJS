@@ -130,8 +130,8 @@ class Contact {
     }
 
 
-  
-    function findContact(findName) {
+  //find Contact
+    function editContact(findName) {
       for(let person of contactList){
         if(findName === person.firstName){
           console.log("Edit Contact");
@@ -175,8 +175,24 @@ class Contact {
       }
     }
 
+    function deleteContact(findName) {
+      for(let person of contactList){
+        if(findName === person.firstName){
+          contactList.pop(person);
+        }
+      }
+    }
+
+
+
+     //find and Edit Contact
     let findName="Naveen";
-    findContact(findName);
+    editContact(findName);
+    
+    let deleteName="Bhagi";
+    deleteContact(deleteName);
+
+
     
       //printing contacts
       for(let person of contactList){
