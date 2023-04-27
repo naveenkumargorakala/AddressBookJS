@@ -1,22 +1,22 @@
 
 class Contact {
-  firstName
-  lastName
-  address
-  city
-  state
-  zip
-  phone
-  email
+  firstName;
+  lastName;
+  address;
+  city; 
+  state;
+  zipcode;
+  phoneNumber;
+  email;
 
-  constructor(firstName, lastName, address, city, state, zip, phone, email){
+  constructor(firstName, lastName, address, city, state, zipcode, phoneNumber, email){
       this.firstName = firstName;
       this.lastName = lastName;
       this.address = address;
       this.city = city;
       this.state = state;
-      this.zip = zip;
-      this.phone = phone;
+      this.zipcode = zipcode;
+      this.phoneNumber = phoneNumber;
       this.email = email;
   }
   get firstName(){
@@ -34,10 +34,10 @@ class Contact {
       return this.state;
    }
    get zip(){
-      return this.zip;
+      return this.zipcode;
    }
    get phone(){
-      return this.phone;
+      return this.phoneNumber;
    }
    get email(){
       return this.email;
@@ -82,14 +82,14 @@ class Contact {
    set zip(zip){
       let zipRegex = RegExp('^[0-9]{3}\\s{0,1}[0-9]{3}$');
       if(zipRegex.test(zip))
-      this.zip = zip;
+      this.zipcode = zipcode;
       else
       throw "Zip Code is Incorrect!!!!!!!!";
    }
    set phone(phone){
       let phoneRegex = RegExp('^[0-9]{2}\\s{1}[0-9]{10}$');
       if(phoneRegex.test(phone))
-      this.phone = phone;
+      this.phoneNumber = phoneNumber;
       else
       throw "Phone is Incorrect!!!!!!!!";
    }
@@ -122,6 +122,64 @@ class Contact {
       catch(e){
           console.log(e)
       }
+
+
+      //printing contacts
       for(let person of contactList){
       console.log(person);
     }
+
+
+  
+    function findContact(findName) {
+      for(let person of contactList){
+        if(findName === person.firstName){
+          console.log("Edit Contact");
+          console.log("1.firstName \n 2.lastName \n 3.address \n 4.city \n 5.State \n 6.phoneNumber \n 7.email \n 8.exit \n 9.zipcode");
+          let choice=1;
+          switch(choice){
+            case 1:
+              person.firstName="Naveeeeeen";
+            break;
+            case 2:
+              person.lastName="Naik";
+            break;
+            case 3:
+              person.address="Narayanapm"
+            break;
+            case 4:
+              person.city="Haripm";
+            break;
+            case 5:
+              person.state="AndhraPradesh";
+            break;
+            case 6:
+              person.phoneNumber=8569856697;
+            break;
+            case 7:
+              person.email="nahvah@gmail.com"
+            break;
+            case 8:
+              console.log("exit");
+              break;
+            case 9:
+              person.zipcode=564564;
+            break;
+          }
+          break;
+      
+        }
+        else
+        console.log("No contact Found!!!")
+
+      }
+    }
+
+    let findName="Naveen";
+    findContact(findName);
+    
+      //printing contacts
+      for(let person of contactList){
+        console.log(person);
+      }
+  
